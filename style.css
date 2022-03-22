@@ -1,0 +1,30 @@
+.navbar .navbar-collapse {
+text-align: center;
+}
+
+.bg-header {
+  background-color: #171A21;
+}
+
+.menu-itens{
+  color: #b8b6b4 !important;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+}
+
+.header-menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-menu li {
+  margin-left: 25px;
+}
+
+.menu-itens:hover {
+  color: #fff !important;
+}
