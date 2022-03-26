@@ -1,3 +1,5 @@
+//CRIANDO CONEXÃO COM O BANCO
+
 async function connect(){
 
     if(global.connection && global.connection.state !== 'disconnected'){
@@ -14,13 +16,24 @@ async function connect(){
 
 connect();
 
+// MANDANDO QUERY PRO BANCO PRA CONSEGUIR UM RETORNO
 async function selectGames(){
     //let nome = 'PENELOPE'
     const conn = await connect();
     return await conn.query(`SELECT * FROM steam `);
 }
 
-module.exports = {selectGames}
+async function selectDescription() {
+    const conn = await connect();
+    return await conn.query(`SELECT  steam.name ,steam_description_data.short_description, steam_media_data.header_image
+    FROM steam_description_data
+    INNER JOIN steam
+    ON(appid = steam_appid) 
+    INNER JOIN steam_media_data
+    using(steam_appid);`);  
+}
+
+module.exports = {selectGames, selectDescription}
 
 
 //const db = window.openDatabase()
