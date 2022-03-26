@@ -21,3 +21,6 @@ async function selectGames(){
 }
 
 module.exports = {selectGames}
+
+
+//const db = window.openDatabase()
