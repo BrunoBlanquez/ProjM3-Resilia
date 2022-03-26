@@ -2,7 +2,10 @@
 const botao = $('#btn');
 const painelDeJogos = $('#painelDeJogos');
 const inputJogo = $('#nomeJogo');
-const headerJogo = $('#headerJogo')
+const headerJogo = $('#headerJogo');
+const tituloJogo = $('#tituloJogo');
+const descricaoJogo = $('#descricaoJogo');
+
 // const jogoDaPesquisa = $('#inputPesquisa')
 
 // botao.on('click', async function() {  
@@ -29,7 +32,9 @@ async function buscaTabela(teste) {
         inputJogo.val(data.short_description);
         console.log(inputJogo.val())
 
+        tituloJogo.html(data.name);
         headerJogo.attr('src', data.header_image);
+        descricaoJogo.html(data.short_description);
 
         painelDeJogos.append(data[0]);
             // return data;

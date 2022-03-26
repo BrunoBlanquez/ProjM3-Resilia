@@ -38,19 +38,39 @@
       </div>
     </div>
   </nav>
-  <main>
+  <main class="painelPrincipal">
     <div>
       <div class="div-teste">
-        <label for="inputPesquisa" class="labelPesquisa">Jogos Confira nossos Jogos</label>
-        <section id="painelDeJogos">
-            <p id="jogos"> nome.jogo </p>
-            <input id="nomeJogo" type="text">
-            <button id="btn">Teste</button>
+        <!-- <label for="inputPesquisa" class="labelPesquisa">Jogos Confira nossos Jogos</label> -->
+        <section class="painelBusca">
+            <input id="nomeJogo" type="text" placeholder="Busque Jogos pelo NOME">
+            <button id="btn"><img class="iconeBusca" src="./../img/iconeBusca.png"></button>
         </section>
 
-        <aside>
-          <img id="headerJogo" src="" alt="">
-        </aside>
+        <h1 id="tituloJogo" class="tituloJogo">Counter-Strike</h1>
+        
+        <section class="informacoesJogo">
+          <figure class="screenshot">
+            
+            <img src="https://steamcdn-a.akamaihd.net/steam/apps/10/0000000132.600x338.jpg?t=1528733245" alt="">
+          </figure>
+          <aside class="infoJogo">
+            <img id="headerJogo" class="headerJogo" src="https://steamcdn-a.akamaihd.net/steam/apps/10/header.jpg?t=1528733245" alt="">
+            <p id="descricaoJogo" class="descricaoJogo">Play the world's number 1 online action game.
+              Engage in an incredibly realistic brand of terrorist warfare in 
+              this wildly popular team-based game. Ally with teammates to complete 
+              strategic missions. Take out enemy sites. Rescue hostages. Your role 
+              affects your team's success. Your team's success affects your role.
+            </p>
+            <div class="infoExtra">
+              <p id="analisesPositivas">POSITIVE RATING: 100000</p><br>
+              <p id="DataLançamento">DATA DE LANÇAMENTO: 20/02/2010</p><br>
+              <p id="Desenvolvedor">DEVELOPER: Valve</p>
+              <p id="Distribuidora">PLUBISHER: Valve</p>
+            </div>
+          </aside>
+          
+        </section>
 
       </div>
     </div>
