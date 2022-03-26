@@ -50,3 +50,19 @@ text-align: center;
   width: 250px;
   height: 30px;
 }
+
+.btnPesquisar {
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 30px;
+  margin-top: 15px;
+  background: linear-gradient( to bottom, #799905 5%, #536904 95%);
+  color: #D2E885 !important;
+  border-radius: 5px;
+  border: none;
+}
+
+.btnPesquisar:hover {
+  color: white;
+  background: #799905;
+}
