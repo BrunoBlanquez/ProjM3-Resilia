@@ -1,3 +1,16 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  background-color: #2a475e;
+}
+
 .navbar .navbar-collapse {
 text-align: center;
 }
@@ -31,19 +44,70 @@ text-align: center;
 }
 
 .div-teste {
-  background: rgb(27,41,57);
-  background: linear-gradient(90deg, rgba(27,41,57,1) 20%, rgba(30,49,80,1) 50%, rgba(27,40,57,1) 80%);
-  height: 1500px;
-  width: 100%;
-  display: flex;
+  /* background: rgb(27,41,57);
+  background: linear-gradient(90deg, rgba(27,41,57,1) 20%, rgba(30,49,80,1) 50%, rgba(27,40,57,1) 80%); */
+  width: 70%;
+  height: 500px;
+  margin: 0 auto 0 auto;
   flex-direction: column;
   align-items: center;
+}
+
+.painelBusca{
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.painelBusca img{
+  height: 20px;
+}
+
+.painelBusca button{
+  width: 30px;
+  height: 25px;
+  padding-top: 3px;
+  background-color: #4e95c4;
+  box-shadow: 0 0 0 0;
+  border: 1px;
+  outline: 0;
+  cursor: pointer;
+  border-top-right-radius:5px;
+  border-bottom-right-radius:5px ;
+}
+
+.painelBusca button:hover{
+  background-color: #66c0f4 ;
+}
+
+.painelBusca input{
+  height: 25px;
+  width: 220px;
+  padding-left: 5px;
+  background-color: #305d8a;
+  color: #fff;
+  box-shadow: 0 0 0 0;
+  border: 1px;
+  outline: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.painelBusca input::placeholder {
+  color: gray;
+}
+
+.painelBusca input:hover{
+  outline: 1px solid #66c0f4;
+  outline-offset: -1px;
 }
 
 .labelPesquisa {
   color: #b8b6b4;
   margin-bottom: 10px;
-  margin-top: 250px;
+  /* margin-top: 250px; */
 }
 
 .inputPesquisa {
@@ -65,4 +129,74 @@ text-align: center;
 #btn:hover {
   color: white;
   background: #799905;
+} 
+ 
+.tituloJogo{
+  font-size: 26px;
+  line-height: 32px;
+  text-overflow: ellipsis;
+}
+
+.painelPrincipal{
+  background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/10/page_bg_generated_v6b.jpg?t=1528733245');  
+  background-size: 100%;
+  background-repeat: no-repeat;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.informacoesJogo{
+ 
+  display: flex;
+  /* border: 3px solid red; */
+ 
+  background-color: rgba(0,0,0,0.4);
+}
+.informacoesJogo{
+  /* border: 3px solid red;  */
+  width: 100%;
+  height: 500px;
+  
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap ;
+   
+  }
+
+.screenshot{
+  /* border: 3px solid yellow; */
+  width: 580px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+}
+
+.screenshot img {
+  height: 100%;
+}
+
+.infoJogo{
+  /* border: 3px solid green; */
+  width: 340px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.descricaoJogo{
+  /* border: 3px solid pink; */
+  width: 340px;
+  height: 144px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.infoExtra{
+  margin-top: 0px;
+}
+
+.infoExtra p{
+  font-size: 10px;
+  color: #556772;
 }
