@@ -25,7 +25,7 @@ async function selectGames(){
 
 async function selectDescription() {
     const conn = await connect();
-    return await conn.query(`SELECT  steam.name ,steam_description_data.short_description, steam_media_data.*
+    return await conn.query(`SELECT  steam.name, steam.positive_ratings, steam.developer, steam.publisher, steam_description_data.short_description, steam_media_data.*
     FROM steam_description_data
     INNER JOIN steam
     ON(appid = steam_appid) 
