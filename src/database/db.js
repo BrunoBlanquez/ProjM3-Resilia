@@ -33,7 +33,34 @@ async function selectDescription() {
     using(steam_appid);`);  
 }
 
-module.exports = {selectGames, selectDescription}
+async function selectTop5Gratis() {
+    const conn = await connect();
+    return await conn.query(`SELECT steam.name, steam.price, steam.positive_ratings, steam_media_data.header_image
+    FROM steam
+    INNER JOIN steam_media_data
+    ON (appid = steam_appid )
+    HAVING price = 0 
+    ORDER BY positive_ratings DESC LIMIT 5;`)
+}
 
+async function selectLançamento() {
+    const conn = await connect();
+    return await conn.query(`SELECT steam.name, steam.release_date, steam.positive_ratings, steam_media_data.header_image
+    FROM steam 
+    INNER JOIN steam_media_data
+    ON (appid = steam_appid )
+    HAVING release_date 
+    BETWEEN '2018-01-01' AND '2023-01-01'
+    ORDER BY positive_ratings DESC;`)
+}
 
-//const db = window.openDatabase()
+async function selectPorValor(valor) {
+    const conn = await connect();
+    return await conn.query(`SELECT steam.name, steam.price, steam_media_data.header_image
+    FROM steam 
+    INNER JOIN steam_media_data
+    ON (appid = steam_appid )
+    HAVING price = ${valor}`)
+}
+
+module.exports = {selectGames, selectDescription, selectTop5Gratis, selectLançamento, selectPorValor}

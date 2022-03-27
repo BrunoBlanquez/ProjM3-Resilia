@@ -12,16 +12,8 @@ const dataLançamento = $('#dataLançamento');
 const desenvolvedor = $('#desenvolvedor');
 const distribuidora = $('#distribuidora');
 
-
 botao.on('click', function name(params) {
-    const tabela = buscaTabela(); // then é pra pegar o valor da promise
-    
-    let obj = {
-        id: 2,
-        nome: 'matric'
-    }
-    
-    console.log('testando retorno da função', tabela);
+    buscaTabela(); 
 })
 
 async function buscaTabela(teste) {
@@ -34,7 +26,7 @@ async function buscaTabela(teste) {
 
             data.forEach(jogos => {
                 jogos.forEach( jogo =>{
-                    if( jogo.name == inputJogo.val() ){
+                    if( jogo.name.toLowerCase() == inputJogo.val().toLowerCase() ){
                         tituloJogo.html(jogo.name);
                         headerJogo.attr('src', jogo.header_image);
                         descricaoJogo.html(jogo.short_description);

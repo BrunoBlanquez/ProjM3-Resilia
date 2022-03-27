@@ -125,6 +125,7 @@ text-align: center;
   background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/10/page_bg_generated_v6b.jpg?t=1528733245');  
   background-size: 100%;
   background-repeat: no-repeat;
+  height: 1000px;
   /* display: flex;
   justify-content: center; */
 }
@@ -139,7 +140,7 @@ text-align: center;
 .informacoesJogo{
   /* border: 3px solid red;  */
   width: 100%;
-  height: 500px;
+  height: 480px;
   
   display: flex;
   justify-content: space-between;
@@ -157,6 +158,7 @@ text-align: center;
 }
 
 .screenshot img {
+  max-width: 580px;
   height: 100%;
 }
 
@@ -183,4 +185,36 @@ text-align: center;
 .infoExtra p{
   font-size: 10px;
   color: #556772;
+}
+
+.top5{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 160px;
+  margin: 20px 15px;
+}
+
+.tituloJogos{
+  width: 100%;
+  height: 12.5%;
+  margin-bottom: 5px;
+}
+
+.container-jogos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 87.5%;
+}
+
+.fileiraJogos{
+  width: 19%;
+  height: 106px;
+  background-color: red;
+}
+
+.fileiraJogos img{
+  width: 100%;
 }

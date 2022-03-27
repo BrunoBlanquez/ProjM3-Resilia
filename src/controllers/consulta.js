@@ -5,20 +5,25 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-    
     // SALVANDO O RETORNO DA QUERY EM UMA VARIAVEL
     async function testando(){
         const db = require('./../database/db');
-        //console.log('select * from steam');
         const listaDeJogos =  await db.selectDescription();
-        return res.json( listaDeJogos )
+        return res.json( listaDeJogos );
     
     };
-    
     testando();
-    
-    
 });
 
-app.listen('4567');
+app.get('/top5gratis', (req, res) => {
+    async function pegaTop5() {
+        const db = require('./../database/db');
+        const top5JogosGratis = await db.selectTop5Gratis();
+        return res.json( top5JogosGratis );
+    };
+
+    pegaTop5();
+})
+
+app.listen('3000');
 
