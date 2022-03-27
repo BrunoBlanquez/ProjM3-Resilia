@@ -1,4 +1,3 @@
-use steams
 /* 1)total de jogos da steam (Verificar a quantidades de jogos da STEAM) */
 /*Selecionamos atributos name, apelidamos de total de jogos para uma melhor visualização e apontamos a tabela steam)*/
 SELECT count(`name`) 
@@ -78,16 +77,16 @@ inner join steam_requirements_data srd on appid = steam_appid
 order by appid;
  
   /*14 Requisitos vs Fabricante */  /* */
-select s.appid, s.name Nome, s.developer Fabricante, srd.minimum 'Requisitos Minimos'
-from steam s
-inner join steam_requirements_data srd on appid = steam_appid
-order by appid;
+SELECT s.appid, s.name Nome, s.developer Fabricante, srd.minimum 'Requisitos Minimos'
+FROM steam s
+INNER JOIN steam_requirements_data srd ON appid = steam_appid
+ORDER BY appid;
  
  /*15 Lançamento vs tempo de jogo*/
-select s.appid, s.name Nome, sdd.detailed_description Descricao, s.categories Categorias, s.average_playtime, s.median_playtime
-from steam s
-inner join steam_description_data sdd on appid = steam_appid
-order by appid;
+SELECT s.appid, s.name Nome, sdd.detailed_description Descricao, s.categories Categorias, s.average_playtime, s.median_playtime
+FROM steam s
+INNER JOIN steam_description_data sdd on appid = steam_appid
+ORDER BY appid;
 
 select * from steam;
 select * from steam_description_data;
@@ -104,20 +103,31 @@ desc steamspy_tag_data;
 desc steam_requirements_data;
 
 /*14 VALOR TOTAL DE TODOS OS JOGOS DA STEAM.  */
-select sum(price) from steam;
+SELECT sum(price) FROM `steam`;
 
 /*16) Preço  dos jogos de RPG até 50 reais*/
-SELECT max(price) genres_RPG, name
-from steam  
-group by price 
-having max(price) <= 50 ;
+SELECT max(`price`) `genres_RPG`, `name` AS 'Nome'
+from `steam` 
+group by `price`
+having max(`price`) <= 50 ;
 
 /*17)Qual são as versões na Steam do jogo Couter Strike
 datas de lançamento de cada uma delas, e quantidade de proprietários - downloads */
-select release_date as 'Datadelanlançamento' , name as nome, OWNERS as Propietários from steam where name like '%Counter-Strike%'
-select*from steam_requirements_data from steam
+SELECT release_date AS 'Datadelanlançamento' , `NAME` AS 'Nome', `OWNERS` AS 'Propietários' 
+FROM `steam` WHERE NAME like '%Counter-Strike%';
 
 
 
+/*18) Nesta pergunta usamos o 'CASE' 'WHEN' 'ELSE' 'DISTINCT' , consultamos os produtos baratos,
+em conta, e caros. 
+Como ja sabemos que a média é 8, definimos que acima da média (8) = produtos caros
+entre (5) e (8) = produtos em conta
+menor que (5) = produtos baratos */
 
-
+Select DISTINCT `name` AS 'Nome', `price` AS 'Preço', 
+CASE 
+WHEN `price` >= 8 THEN 'Produto caro'
+WHEN `price` >= 5 AND `price` < 8 THEN 'Produto em conta'
+ELSE 'produto barato'
+END AS 'Status_Preço'
+FROM `steam`;
