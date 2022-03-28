@@ -9,9 +9,16 @@
   <link rel="stylesheet" href="./node_modules/jquery/dist/jquery.min.js">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/js/bootstrap.min.js">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+<<<<<<< HEAD
+  <link rel="stylesheet" href="./../css/jogo.css">
+  <script src="./../src/core/jquery.js" defer></script>
+  <script type="module" src="./../src/core/index.js" defer></script>
+  <script src="./../src/core/pegaTabelas.js" defer></script>
+=======
   <link rel="stylesheet" href="../css/style.css">
   <script src="./../jquery.js" defer></script>
   <script src="./../index.js" defer></script>
+>>>>>>> main
   <!-- ./https://code.jquery.com/jquery-3.6.0.min.js -->
 </head>
 
@@ -49,8 +56,9 @@
         </section>
 
         <h1 id="tituloJogo" class="tituloJogo"></h1>
-
-        <section class="informacoesJogo">
+        
+        <!-- INFORMAÇÕES DO JOGO  -->
+        <section id="informacoesJogo" class="informacoesJogo">
           <figure class="screenshot">
 
             <img id="imagemScreenshot" src="" alt="">
@@ -69,47 +77,30 @@
           </aside>
         </section>
 
-        <!-- FILEIRA COM TOP 5 JOGOS GRATIS -->
-        <section class="top5 gratis">
-          <div class="tituloJogos">
+        <!-- DIV FILEIRA COM TOP 5 JOGOS GRATIS -->
+        <section class="top5 gratis" >
+          <div class="tituloJogos" >
             <p>Melhores Jogos Grátis</p><br>
           </div>
-          <div id="divTop5" value="teste" class="container-jogos"></div>
+          <div id="divTop5" value="teste" class="container-jogos">
+            <!-- FILEIRA VEM AQUI -->
+          </div>  
         </section>
 
-        <!-- FILEIRA COM TOP 5 LANÇAMENTOS  -->
+        <!-- DIV FILEIRA COM TOP 5 LANÇAMENTOS  -->
         <section class="top5 lançamentos">
           <div class="tituloJogos">
             <p>Lançamentos Populares</p><br>
           </div>
-
           <div id="divLancamentos" class="container-jogos">
-            <div class="fileira">
-              <img id="imgLançamento0" src="" alt="">
-              <p id="tituloLançamento0"></p>
-            </div>
-            <div class="fileira">
-              <img id="imgLançamento1" src="" alt="">
-              <p id="tituloLançamento1"></p>
-            </div>
-            <div class="fileira">
-              <img id="imgLançamento2" src="" alt="">
-              <p id="tituloLançamento2"></p>
-            </div>
-            <div class="fileira">
-              <img id="imgLançamento3" src="" alt="">
-              <p id="tituloLançamento3"></p>
-            </div>
-            <div class="fileira">
-              <img id="imgLançamento4" src="" alt="">
-              <p id="tituloLançamento4"></p>
-            </div>
-          </div>
+            <!-- FILEIRA VEM AQUI -->
+          </div>  
         </section>
-
-        <section class="top5 menorPreço">
+        
+        <!-- DIV FILEIRA COM FILTRO -->
+        <section id="divFiltro"  class="top5 menorPreço">
           <div class="tituloJogos">
-            <p>Filtre jogos pelo preço: <select id="valorJogo" name="select" id=""></select></p>
+            <p onclick="mostraJogo();">Filtre jogos pelo preço: <select id="valorJogo" name="select" id=""></select></p>
           </div>
 
           <div class="container-jogos">
