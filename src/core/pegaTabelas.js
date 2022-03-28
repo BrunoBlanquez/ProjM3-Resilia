@@ -10,6 +10,7 @@ const dataLançamento = $('#dataLançamento');
 const desenvolvedor = $('#desenvolvedor');
 const distribuidora = $('#distribuidora');
 
+
 //TABELA COMPLETA DA STEAM
 
 async function buscaTabela() {
@@ -27,22 +28,19 @@ async function buscaTabela() {
                         headerJogo.attr('src', jogo.header_image);
                         descricaoJogo.html(jogo.short_description);
 
-                        console.log(jogo.header_image)
-
                         let screenshotsArray = Array.from(jogo.screenshots); // TRANSFORMA A INFO EM ARRAY
                         let arrayFiltro = screenshotsArray.filter( letra => letra !== '[' ).filter(letra => letra !== ']');// TIRA STRING QUE SÃO COLCHETES
                         let objeto = arrayFiltro.join('').split(',')[4]; // PEGA A INFO DA SCREEN QUE TA NA POSIÇÃO 4
                         let finalRetorno = objeto.replace("'path_thumbnail': ",'').replace("'",''); // TIRA TODOS OS CARACTERES DEIXANDO APENAS O LINK DA SCREENSHOT
             
-                        
-                        console.log('teste', finalRetorno );
-
+                       
                         imagemScreenshot.attr('src', finalRetorno);
                         analisesPositivas.html(`POSITIVE RATINGS: ${jogo.positive_ratings}`);
                         desenvolvedor.html(`DEVELOPER: ${jogo.developer}`);
                         distribuidora.html(`PLUBISHER: ${jogo.publisher}`);
+                        dataLançamento.html(`DATA LANÇAMENTO: ${jogo.release_date}`)
 
-                        console.log(jogo)
+                        inputJogo.val('')
                     }
                 })     
             });   

@@ -8,6 +8,7 @@
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
+    line-height: 18px;
     background: rgb(27,41,57);
     background: linear-gradient(90deg, rgba(27,41,57,1) 20%, rgba(30,49,80,1) 50%, rgba(27,40,57,1) 80%);
   }
@@ -47,7 +48,6 @@
     display: flex;
   }
   
-
   .painelBusca{
     height: 10%;
     display: flex;
@@ -143,8 +143,7 @@
     }
   
   .screenshot{
-    /* border: 3px solid yellow; */
-    width: 580px;
+    width: 690px;
     height: 340px;
     display: flex;
     justify-content: center;
@@ -157,7 +156,6 @@
   }
   
   .infoJogo{
-    /* border: 3px solid green; */
     width: 340px;
     height: 520px;
     display: flex;
@@ -165,15 +163,15 @@
   }
   
   .descricaoJogo{
-    /* border: 3px solid pink; */
-    width: 340px;
-    height: 144px;
+    width: 338px;
+    height: 124px;
     font-size: 13px;
     line-height: 18px;
   }
   
   .infoExtra{
     margin-top: 0px;
+    border: 3px solid red;
   }
   
   .infoExtra p{
