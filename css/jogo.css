@@ -136,8 +136,7 @@
     /* border: 3px solid red;  */
     width: 100%;
     height: 480px;
-    
-    display: flex;
+    display: none;
     justify-content: space-between;
     flex-flow: row wrap ;
      
