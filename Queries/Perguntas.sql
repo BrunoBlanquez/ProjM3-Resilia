@@ -2,7 +2,7 @@
 /*Selecionamos atributos name, apelidamos de total de jogos para uma melhor visualização e apontamos a tabela steam)*/
 SELECT count(`name`) 
 AS 'Total de Jogos da Steam' 
-FROM `steam` ;
+FROM `steam` 
 
 /*  2)quais são os jogos da steam  (Verificar os jogos da steam por ordem crescente) */  
 SELECT `name` AS 'Jogos'
@@ -133,3 +133,8 @@ WHEN `price` >= 5 AND `price` < 8 THEN 'Produto em conta'
 ELSE 'produto barato'
 END AS 'Status_Preço'
 FROM `steam`;
+
+/*19) Lista de ID da tabela Steam e Lista de ID da tabela steam_description_data;*/
+SELECT STEAM.APPID FROM `STEAM`;
+UNION ALL
+SELECT * FROM `steam_support_info`;
