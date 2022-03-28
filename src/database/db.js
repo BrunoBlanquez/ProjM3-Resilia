@@ -33,39 +33,7 @@ async function selectDescription() {
     using(steam_appid);`);  
 }
 
-async function selectTop5Gratis() {
-    const conn = await connect();
-    return await conn.query(`SELECT steam.name, steam.price, steam.positive_ratings, steam_media_data.header_image
-    FROM steam
-    INNER JOIN steam_media_data
-    ON (appid = steam_appid )
-    HAVING price = 0 
-    ORDER BY positive_ratings DESC LIMIT 5;`)
-}
+module.exports = {selectGames, selectDescription}
 
-async function selectLancamento() {
-    const conn = await connect();
-    return await conn.query(`SELECT steam.name, steam.release_date, steam.positive_ratings, steam_media_data.header_image
-    FROM steam 
-    INNER JOIN steam_media_data
-    ON (appid = steam_appid )
-    HAVING release_date 
-    BETWEEN '2018-01-01' AND '2023-01-01'
-    ORDER BY positive_ratings DESC;`)
-}
 
-async function selectPorValor(valor) {
-    const conn = await connect();
-    return await conn.query(`SELECT steam.name, steam.price, steam_media_data.header_image
-    FROM steam 
-    INNER JOIN steam_media_data
-    ON (appid = steam_appid )
-    HAVING price = ${valor};`)
-}
-
-async function selectPreco() {
-    const conn = await connect();
-    return await conn.query('SELECT count(price), price FROM steam GROUP BY price ORDER BY price;')
-}
-
-module.exports = {selectGames, selectDescription, selectTop5Gratis, selectLancamento, selectPorValor, selectPreco}
+//const db = window.openDatabase()
