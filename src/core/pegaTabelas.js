@@ -105,9 +105,11 @@ async function pegaFiltro(valor) {
             if (data[0][i]) {
                 $(`#imgFiltro${i}`).attr('src', data[0][i].header_image);
                 $(`#tituloFiltro${i}`).html(data[0][i].name);
+                $(`#preço${i}`).html(`R$ ${data[0][i].price}`);
             } else {
                 $(`#imgFiltro${i}`).attr('src', '');
                 $(`#tituloFiltro${i}`).html('');
+                $(`#preço${i}`).html('');
             }
               
         }
