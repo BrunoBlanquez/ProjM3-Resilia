@@ -9,10 +9,16 @@
   <link rel="stylesheet" href="./node_modules/jquery/dist/jquery.min.js">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/js/bootstrap.min.js">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+<<<<<<< HEAD
   <link rel="stylesheet" href="./../css/jogo.css">
   <script src="./../src/core/jquery.js" defer></script>
   <script type="module" src="./../src/core/index.js" defer></script>
   <script src="./../src/core/pegaTabelas.js" defer></script>
+=======
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="./../jquery.js" defer></script>
+  <script src="./../index.js" defer></script>
+>>>>>>> main
   <!-- ./https://code.jquery.com/jquery-3.6.0.min.js -->
 </head>
 
@@ -20,18 +26,18 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-header ">
     <div class="container header">
       <a class="navbar-brand menu-itens" href="#">
-        <img src="./../img/logo_steam.svg" alt="Logo Steam" width="150" height="100">
+        <img src="../img/logo_steam.svg" alt="Logo Steam" width="150" height="100">
       </a>
       <!-- <div class="header-menu" id="">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 header-menu">
           <li class="nav-item">
-            <a class="nav-link menu-itens" aria-current="page" href="#">Home</a>
+            <a class="nav-link menu-itens" aria-current="page" href="../index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-itens" href="#">Link</a>
+            <a class="nav-link menu-itens" href="estatisticas.html">Estatisticas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-itens" href="html/jogos.html">Jogos</a>
+            <a class="nav-link menu-itens" href="jogos.html">Jogos</a>
           </li>
           <li class="nav-item dropdown">
           </li>
@@ -45,8 +51,8 @@
       <div class="div-teste">
         <!-- <label for="inputPesquisa" class="labelPesquisa">Jogos Confira nossos Jogos</label> -->
         <section class="painelBusca">
-            <input id="nomeJogo" type="text" placeholder="Busque Jogos pelo NOME">
-            <button id="btn"><img class="iconeBusca" src="./../img/iconeBusca.png"></button>
+          <input id="nomeJogo" type="text" placeholder="Busque Jogos pelo NOME">
+          <button id="btn"><img class="iconeBusca" src="./../img/iconeBusca.png"></button>
         </section>
 
         <h1 id="tituloJogo" class="tituloJogo"></h1>
@@ -54,10 +60,10 @@
         <!-- INFORMAÇÕES DO JOGO  -->
         <section id="informacoesJogo" class="informacoesJogo">
           <figure class="screenshot">
-            
+
             <img id="imagemScreenshot" src="" alt="">
           </figure>
-          
+
           <aside class="infoJogo">
             <img id="headerJogo" class="headerJogo" src="" alt="">
             <p id="descricaoJogo" class="descricaoJogo">
@@ -68,7 +74,7 @@
               <p id="desenvolvedor"></p>
               <p id="distribuidora"></p>
             </div>
-          </aside> 
+          </aside>
         </section>
 
         <!-- DIV FILEIRA COM TOP 5 JOGOS GRATIS -->
@@ -96,7 +102,7 @@
           <div class="tituloJogos">
             <p onclick="mostraJogo();">Filtre jogos pelo preço: <select id="valorJogo" name="select" id=""></select></p>
           </div>
-          
+
           <div class="container-jogos">
             <div class="fileira">
               <img id="imgFiltro0" src="" alt="">
@@ -118,7 +124,7 @@
               <img id="imgFiltro4" src="" alt="">
               <p id="tituloFiltro4"></p>
             </div>
-          </div>  
+          </div>
         </section>
 
       </div>
