@@ -14,7 +14,7 @@ const distribuidora = $('#distribuidora');
 
 async function buscaTabela() {
     try {
-            const response = await fetch('http://localhost:3001/'); 
+            const response = await fetch('http://localhost:3000/'); 
             const data = await response.json();
             console.log(data);
              
@@ -60,10 +60,13 @@ async function pegaTop5(params) {
         console.log(data);
 
         for (let i = 0; i < 5; i++) {
-            $(`#imgJogoGratis${i}`).attr('src', data[0][i].header_image);
-            $(`#tituloJogoGratis${i}`).html(data[0][i].name); 
+            $('#divTop5').append(`<div class="fileira">
+                <img id="imgJogoGratis0" src="${data[0][i].header_image}" alt="">
+                <p id="tituloJogoGratis0">${data[0][i].name}</p>
+            </div>`)
         }
         
+            
     }
 
     catch (error) {
@@ -93,8 +96,15 @@ async function pegaFiltro(valor) {
         const data = await response.json();
 
         for (let i = 0; i < 5; i++) {
-            $(`#imgFiltro${i}`).attr('src', data[0][i].header_image);
-            $(`#tituloFiltro${i}`).html(data[0][i].name);  
+
+            if (data[0][i]) {
+                $(`#imgFiltro${i}`).attr('src', data[0][i].header_image);
+                $(`#tituloFiltro${i}`).html(data[0][i].name);
+            } else {
+                $(`#imgFiltro${i}`).attr('src', '');
+                $(`#tituloFiltro${i}`).html('');
+            }
+              
         }
         console.log(data[0][0])
     } catch (error) {

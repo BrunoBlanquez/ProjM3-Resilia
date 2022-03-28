@@ -1,4 +1,4 @@
-import {buscaTabela,pegaTop5, pegaLancamentos, pegaFiltro, montaSelect} from './pegaTabelas.js'
+import {buscaTabela,pegaTop5, pegaLancamentos, pegaFiltro, montaSelect} from './pegaTabelas.js';
 
 const botao = $('#btn');
 
