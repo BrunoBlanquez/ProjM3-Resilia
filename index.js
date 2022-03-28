@@ -1,4 +1,3 @@
-
 const botao = $('#btn');
 const painelDeJogos = $('#painelDeJogos');
 const inputJogo = $('#nomeJogo');
