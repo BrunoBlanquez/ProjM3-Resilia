@@ -19,11 +19,32 @@ app.get('/top5gratis', (req, res) => {
     async function pegaTop5() {
         const db = require('./../database/db');
         const top5JogosGratis = await db.selectTop5Gratis();
-        return res.json( top5JogosGratis );
+        return res.json(top5JogosGratis);
     };
 
     pegaTop5();
 })
+
+app.get('/lancamentos', (req, res) => {
+    async function pegaLançamentos() {
+        const db = require('./../database/db');
+        const jogosLançamentos = await db.selectLançamento();
+        return res.json(jogosLançamentos);
+    }
+
+    pegaLançamentos();
+})
+
+app.get('/filtrovalor/:id', (req, res) => {
+    async function pegaFiltro(filtro) {
+        const db = require('./../database/db');
+        const jogosFiltrados = await db.selectPorValor(filtro);
+        return res.json(jogosFiltrados)
+    }
+
+    pegaFiltro(req.params.id);
+})
+
 
 app.listen('3000');
 
