@@ -10,10 +10,11 @@ FROM `steam`
 ORDER BY `name` ASC;
 
 /*3) quais são os top 15 jogos gratis da steam mais bem avalidaos*/ 
-SELECT `name` AS 'Jogos', price As 'Preço'
+SELECT `name` AS 'Jogos', price As 'Preço', positive_ratings
 FROM `steam`
-WHERE `price` <= 0 
-ORDER BY `name` AND  `POSITIVE_RATINGS` ASC LIMIT 15 ;
+WHERE `price` = 0 
+ORDER BY `positive_ratings` desc LIMIT 15;
+
 
 /*4) quais sao as desenvolvedoras dos jogos com menor raking */ 
 SELECT  `developer`As'Desenvolvedoras', (`negative_ratings`) AS Rakings
@@ -36,6 +37,7 @@ SELECT steam.name As'Jogos', steam_requirements_data.*
 FROM `steam` 
 INNER JOIN steam_requirements_data 
 ON (steam_appid = appid); 
+
 
 /*8)Descrição e Detalhes sobre o jogo e nota do publico ( Ajuda a ter uma ideia se o jogo vai atender a seus gostos)*/ 
 SELECT steam.name, steam.steamspy_tags, steam_description_data.*, steam.positive_ratings, steam.negative_ratings 
