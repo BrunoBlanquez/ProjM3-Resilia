@@ -22,11 +22,10 @@ async function buscaTabela() {
             const data = await response.json();
             console.log(data);
              
-           
-
+        
             data.forEach(jogos => {
                 jogos.forEach( jogo =>{
-                    if( jogo.name == inputJogo.val() ){
+                    if( jogo.name.toLowerCase() == inputJogo.val().toLowerCase() ){
                         tituloJogo.html(jogo.name);
                         headerJogo.attr('src', jogo.header_image);
                         descricaoJogo.html(jogo.short_description);

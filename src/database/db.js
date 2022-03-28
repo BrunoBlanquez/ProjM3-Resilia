@@ -25,12 +25,12 @@ async function selectGames(){
 
 async function selectDescription() {
     const conn = await connect();
-    return await conn.query(`SELECT  steam.name, steam.positive_ratings, steam.developer, steam.publisher, steam_description_data.short_description, steam_media_data.*
-    FROM steam_description_data
-    INNER JOIN steam
-    ON(appid = steam_appid) 
+    return await conn.query(`SELECT  steam.name, steam.positive_ratings, steam.developer, steam.publisher, steam_media_data.*,  steam_description_data.short_description
+    FROM steam
     INNER JOIN steam_media_data
-    using(steam_appid);`);  
+    ON(appid = steam_appid)
+    LEFT JOIN steam_description_data
+    USING (steam_appid);`);
 }
 
 async function selectTop5Gratis() {
