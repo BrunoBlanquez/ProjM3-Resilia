@@ -43,7 +43,7 @@ async function selectTop5Gratis() {
     ORDER BY positive_ratings DESC LIMIT 5;`)
 }
 
-async function selectLançamento() {
+async function selectLancamento() {
     const conn = await connect();
     return await conn.query(`SELECT steam.name, steam.release_date, steam.positive_ratings, steam_media_data.header_image
     FROM steam 
@@ -60,7 +60,12 @@ async function selectPorValor(valor) {
     FROM steam 
     INNER JOIN steam_media_data
     ON (appid = steam_appid )
-    HAVING price = ${valor}`)
+    HAVING price = ${valor};`)
 }
 
-module.exports = {selectGames, selectDescription, selectTop5Gratis, selectLançamento, selectPorValor}
+async function selectPreco() {
+    const conn = await connect();
+    return await conn.query('SELECT count(price), price FROM steam GROUP BY price ORDER BY price;')
+}
+
+module.exports = {selectGames, selectDescription, selectTop5Gratis, selectLancamento, selectPorValor, selectPreco}
