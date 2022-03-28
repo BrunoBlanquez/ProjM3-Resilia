@@ -1,4 +1,3 @@
-const botao = $('#btn');
 const painelDeJogos = $('#painelDeJogos');
 const inputJogo = $('#nomeJogo');
 const headerJogo = $('#headerJogo');
@@ -11,22 +10,18 @@ const dataLançamento = $('#dataLançamento');
 const desenvolvedor = $('#desenvolvedor');
 const distribuidora = $('#distribuidora');
 
-// BUSCANDO POR NOME
-botao.on('click', function () {
-    buscaTabela(); 
-})
+//TABELA COMPLETA DA STEAM
 
 async function buscaTabela() {
     try {
-            const response = await fetch('http://localhost:3000/'); 
+            const response = await fetch('http://localhost:3001/'); 
             const data = await response.json();
             console.log(data);
              
-           
-
+        
             data.forEach(jogos => {
                 jogos.forEach( jogo =>{
-                    if( jogo.name == inputJogo.val() ){
+                    if( jogo.name.toLowerCase() == inputJogo.val().toLowerCase() ){
                         tituloJogo.html(jogo.name);
                         headerJogo.attr('src', jogo.header_image);
                         descricaoJogo.html(jogo.short_description);
@@ -75,7 +70,6 @@ async function pegaTop5(params) {
         console.error('erro : ', error);
     }
 }
-pegaTop5()
 
 // BUSCANDO LANÇAMENTOS
 async function pegaLancamentos() {
@@ -92,15 +86,7 @@ async function pegaLancamentos() {
     }
 }
 
-
-pegaLancamentos()
-
-
-// VALOR FILTRADO
-$('#valorJogo').on('change', function name(params) {
-    pegaFiltro($('#valorJogo').val());
-})
-
+//TABELA FILTRADA
 async function pegaFiltro(valor) {
     try {
         const response = await fetch(`http://localhost:3000/filtrovalor/${valor}`);
@@ -116,11 +102,7 @@ async function pegaFiltro(valor) {
     }
 }
 
-
-
-pegaFiltro(0)
-
-
+// MONTANDO O SELECT
 async function montaSelect() {
     try {
         const response = await fetch('http://localhost:3000/precos');
@@ -135,4 +117,4 @@ async function montaSelect() {
     }
 }
 
-montaSelect();
+export {buscaTabela, pegaTop5, pegaLancamentos, pegaFiltro, montaSelect};
