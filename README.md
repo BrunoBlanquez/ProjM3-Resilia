@@ -3,24 +3,32 @@
 <p align="center">
  <a href="#Sobre">Sobre</a> •
  <a href="#Tecnologias">Tecnologias</a> • 
- <a href="#Pré-requisitos">Pré-requisitos e como rodar a aplicação</a> • 
+ <a href="#Pré-requisitos e como rodar a aplicação">Pré-requisitos e como rodar a aplicação</a> • 
+ <a href="#Perguntas">Perguntas</a> • 
  <a href="#autores">Autores</a>
 </p>
 
 ## Sobre
 
-<br>
+Para construção do projeto, foi utilizado um banco de dados da Steam, fornecido pela Resilia Educação, as consultas das tabelas foram realizadas no MySQL e os gráficos foram gerados usando Power BI para fins educacionais.
+O projeto foi realizado com o uso de metodologias ágeis usando o trello como ferramenta de suporte.
+
+metodologias ágeis:
+- Scrum
+- Kanban
 
 ## Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
- HTML 5
- CSS 3
- JavaScript
- MySQL Workbench 8.0 CE
- PowerBI
- Visual Studio Code
+- [Git](https://git-scm.com)
+- [HTML 5](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [CSS 3](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [MySQL](https://dev.mysql.com/downloads/mysql/)
+- [MySql Workbench](https://dev.mysql.com/downloads/workbench/ )
+- [PowerBI](https://powerbi.microsoft.com/pt-br/getting-started-with-power-bi/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Pré-requisitos e como rodar a aplicação
 
@@ -40,6 +48,27 @@ $ code .
 
 ```
 
+# Perguntas
+
+ - Total de jogos da steam?
+ - Quais são os jogos da steam?
+ - Quais são os top 15 jogos grátis da steam mais bem avalidaos?
+ - Quais são as desenvolvedoras dos jogos com menor ranking? 
+ - Quais são os 50 melhores jogos do gênero fps mais bem avaliados?
+ - Quais os jogos de lançamento com raking positivo? ( Interassante saber se tem um jogo novo , pq as vezes o antigo enjoa e o sistema de ranking já vem zerado)
+ - Quais os requistos pro jogo rodar? ( Evita fustração de deixar o jogo baixando por 3 dia e no fim ele acabar não rodando no seu pc)
+ - Descrição e Detalhes sobre o jogo e nota do publico ( Ajuda a ter uma ideia se o jogo vai atender a seus gostos)
+ - Quais são os jogos com o valor acima da média de preços?
+ - Comparação de avaliações
+ - Headers dos jogos
+ - Descrição dos jogos abaixo de $ 5,00
+ - Requisitos mínimos no geral
+ - Requisitos vs Fabricante
+ - Lançamento vs tempo de jogo
+ - O valor total de todos os jogos da steam?
+ - Preço dos jogos de RPG até 50 reais?
+ - Quais são as versões do jogo Couter Strike que estão na Steam, datas de lançamento de cada uma delas quantidade de proprietários e downloads?
+ 
 # Autores
 
 | [<img src="https://avatars.githubusercontent.com/u/96596496?v=4" width=115><br><sub>Emilly Costa</sub>](https://github.com/theemillycosta) |  [<img src="https://avatars.githubusercontent.com/u/92882615?v=4" width=115><br><sub>Bruno Blanquez</sub>](https://github.com/BrunoBlanquez) |  [<img src="https://avatars.githubusercontent.com/u/55266551?v=4" width=115><br><sub>Matric</sub>](https://github.com/MatricBts) |
