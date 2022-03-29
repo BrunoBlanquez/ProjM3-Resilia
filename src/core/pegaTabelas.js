@@ -10,6 +10,7 @@ const dataLançamento = $('#dataLançamento');
 const desenvolvedor = $('#desenvolvedor');
 const distribuidora = $('#distribuidora');
 
+
 //TABELA COMPLETA DA STEAM
 
 async function buscaTabela() {
@@ -22,26 +23,24 @@ async function buscaTabela() {
             data.forEach(jogos => {
                 jogos.forEach( jogo =>{
                     if( jogo.name.toLowerCase() == inputJogo.val().toLowerCase() ){
+                        $('.informacoesJogo').css('display', 'flex')
                         tituloJogo.html(jogo.name);
                         headerJogo.attr('src', jogo.header_image);
                         descricaoJogo.html(jogo.short_description);
-
-                        console.log(jogo.header_image)
 
                         let screenshotsArray = Array.from(jogo.screenshots); // TRANSFORMA A INFO EM ARRAY
                         let arrayFiltro = screenshotsArray.filter( letra => letra !== '[' ).filter(letra => letra !== ']');// TIRA STRING QUE SÃO COLCHETES
                         let objeto = arrayFiltro.join('').split(',')[4]; // PEGA A INFO DA SCREEN QUE TA NA POSIÇÃO 4
                         let finalRetorno = objeto.replace("'path_thumbnail': ",'').replace("'",''); // TIRA TODOS OS CARACTERES DEIXANDO APENAS O LINK DA SCREENSHOT
             
-                        
-                        console.log('teste', finalRetorno );
-
+                       
                         imagemScreenshot.attr('src', finalRetorno);
                         analisesPositivas.html(`POSITIVE RATINGS: ${jogo.positive_ratings}`);
                         desenvolvedor.html(`DEVELOPER: ${jogo.developer}`);
                         distribuidora.html(`PLUBISHER: ${jogo.publisher}`);
+                        dataLançamento.html(`DATA LANÇAMENTO: ${jogo.release_date}`)
 
-                        console.log(jogo)
+                        inputJogo.val('')
                     }
                 })     
             });   
@@ -52,6 +51,11 @@ async function buscaTabela() {
     }
 }
 
+function mostraJogo() {
+    console.log('foi')
+}
+
+
 // BUSCANDO TOP5
 async function pegaTop5(params) {
     try {
@@ -60,18 +64,17 @@ async function pegaTop5(params) {
         console.log(data);
 
         for (let i = 0; i < 5; i++) {
-            $('#divTop5').append(`<div class="fileira">
+            $('#divTop5').append(`<div id="${data[0][i].name}"  class="fileira">
                 <img id="imgJogoGratis0" src="${data[0][i].header_image}" alt="">
                 <p id="tituloJogoGratis0">${data[0][i].name}</p>
             </div>`)
-        }
-        
-            
+        }         
     }
-
     catch (error) {
         console.error('erro : ', error);
     }
+
+    console.log('dentro da função')
 }
 
 // BUSCANDO LANÇAMENTOS
@@ -81,8 +84,10 @@ async function pegaLancamentos() {
         const data = await response.json();
 
         for (let i = 0; i < 5; i++) {
-            $(`#imgLançamento${i}`).attr('src', data[0][i].header_image);
-            $(`#tituloLançamento${i}`).html(data[0][i].name);
+            $('#divLancamentos').append(`<div class="fileira">
+                <img id="imgJogoGratis0" src="${data[0][i].header_image}" alt="">
+                <p id="tituloJogoGratis0">${data[0][i].name}</p>
+            </div>`)
         }
     } catch (error) {
         console.error('erro : ', error);
@@ -100,9 +105,11 @@ async function pegaFiltro(valor) {
             if (data[0][i]) {
                 $(`#imgFiltro${i}`).attr('src', data[0][i].header_image);
                 $(`#tituloFiltro${i}`).html(data[0][i].name);
+                $(`#preço${i}`).html(`R$ ${data[0][i].price}`);
             } else {
                 $(`#imgFiltro${i}`).attr('src', '');
                 $(`#tituloFiltro${i}`).html('');
+                $(`#preço${i}`).html('');
             }
               
         }
@@ -127,4 +134,5 @@ async function montaSelect() {
     }
 }
 
-export {buscaTabela, pegaTop5, pegaLancamentos, pegaFiltro, montaSelect};
+
+export {buscaTabela, pegaTop5, pegaLancamentos, pegaFiltro, montaSelect, mostraJogo};

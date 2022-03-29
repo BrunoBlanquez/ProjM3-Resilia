@@ -1,4 +1,4 @@
-import {buscaTabela,pegaTop5, pegaLancamentos, pegaFiltro, montaSelect} from './pegaTabelas.js';
+import {buscaTabela,pegaTop5, pegaLancamentos, pegaFiltro, montaSelect, mostraJogo} from './pegaTabelas.js';
 
 const botao = $('#btn');
 
@@ -7,6 +7,7 @@ const botao = $('#btn');
 botao.on('click', function () {
     buscaTabela(); 
 })
+
 
 // VALOR FILTRADO
 $('#valorJogo').on('change', function name(params) {
@@ -20,3 +21,15 @@ pegaFiltro(0);
 
 // INSERINDO VALORES NO SELECT
 montaSelect();
+
+//mostraJogo()
+
+
+
+setTimeout(function(){
+    console.log('liberado')
+    $().on('click', function(event) {
+    console.log(event)
+})
+},1000);
+
