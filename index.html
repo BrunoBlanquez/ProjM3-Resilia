@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Steam - Inicio</title>
   <link rel="stylesheet" href="./node_modules/jquery/dist/jquery.min.js">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/js/bootstrap.min.js">
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
   <script src="./index.js" defer></script>
 </head>
@@ -23,10 +23,13 @@
       <div class="header-menu" id="">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 header-menu">
           <li class="nav-item">
-            <a class="nav-link menu-itens" aria-current="page" href="#">Home</a>
+            <a class="nav-link menu-itens" aria-current="page" href="./index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-itens" href="#">Link</a>
+            <a class="nav-link menu-itens" href="/html/estatisticas.html">Estatisticas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu-itens" href="html/jogos.html">Jogos</a>
           </li>
           <li class="nav-item dropdown">
           </li>
@@ -36,10 +39,12 @@
   </nav>
   <main>
     <div>
-      <div class="div-teste">
-        <label for="inputPesquisa" class="labelPesquisa">Pesquise seu jogo</label>
-        <input type="text" class="inputPesquisa" id="inputPesquisa">
-        <button id="btn"> Pesquisar </button>
+      <div class="div-pesquisa">
+        <div>
+          <label for="inputPesquisa" class="labelPesquisa">Pesquise seu jogo</label>
+          <input type="text" class="inputPesquisa" id="inputPesquisa">
+          <button id="btn"> Pesquisar </button>
+        </div>
       </div>
     </div>
   </main>

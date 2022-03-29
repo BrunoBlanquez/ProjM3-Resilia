@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogos - Steam</title>
+  <link rel="stylesheet" href="./node_modules/jquery/dist/jquery.min.js">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/js/bootstrap.min.js">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./../css/jogo.css">
+  <script src="./../src/core/jquery.js" defer></script>
+  <script type="module" src="./../src/core/index.js" defer></script>
+  <script src="./../src/core/pegaTabelas.js" defer></script>
+  <!-- ./https://code.jquery.com/jquery-3.6.0.min.js -->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-header ">
+    <div class="container header">
+      <a class="navbar-brand menu-itens" href="#">
+        <img src="../img/logo_steam.svg" alt="Logo Steam" width="150" height="100">
+      </a>
+      <!-- <div class="header-menu" id="">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 header-menu">
+          <li class="nav-item">
+            <a class="nav-link menu-itens" aria-current="page" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu-itens" href="estatisticas.html">Estatisticas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu-itens" href="jogos.html">Jogos</a>
+          </li>
+          <li class="nav-item dropdown">
+          </li>
+        </ul>
+      </div> -->
+    </div>
+  </nav>
+
+  <main class="painelPrincipal">
+    <div>
+      <div class="div-teste">
+        <!-- <label for="inputPesquisa" class="labelPesquisa">Jogos Confira nossos Jogos</label> -->
+        <section class="painelBusca">
+          <input id="nomeJogo" type="text" placeholder="Busque Jogos pelo NOME">
+          <button id="btn"><img class="iconeBusca" src="./../img/iconeBusca.png"></button>
+        </section>
+
+        <h1 id="tituloJogo" class="tituloJogo"></h1>
+        
+        <!-- INFORMAÇÕES DO JOGO  -->
+        <section id="informacoesJogo" class="informacoesJogo">
+          <figure class="screenshot">
+
+            <img id="imagemScreenshot" src="" alt="">
+          </figure>
+
+          <aside class="infoJogo">
+            <img id="headerJogo" class="headerJogo" src="" alt="">
+            <p id="descricaoJogo" class="descricaoJogo"></p>
+            <div class="infoExtra">
+              <p id="analisesPositivas"></p><br>
+              <p id="dataLançamento"></p><br>
+              <p id="desenvolvedor"></p>
+              <p id="distribuidora"></p>
+            </div>
+          </aside>
+        </section>
+
+        <!-- DIV FILEIRA COM TOP 5 JOGOS GRATIS -->
+        <section class="top5 gratis" >
+          <div class="tituloJogos" >
+            <p>Melhores Jogos Grátis</p><br>
+          </div>
+          <div id="divTop5" value="teste" class="container-jogos">
+            <!-- FILEIRA VEM AQUI -->
+          </div>  
+        </section>
+
+        <!-- DIV FILEIRA COM TOP 5 LANÇAMENTOS  -->
+        <section class="top5 lançamentos">
+          <div class="tituloJogos">
+            <p>Lançamentos Populares</p><br>
+          </div>
+          <div id="divLancamentos" class="container-jogos">
+            <!-- FILEIRA VEM AQUI -->
+          </div>  
+        </section>
+        
+        <!-- DIV FILEIRA COM FILTRO -->
+        <section id="divFiltro"  class="top5 menorPreço">
+          <div class="tituloJogos">
+            <p onclick="mostraJogo();">Filtre jogos pelo preço: <select id="valorJogo" name="select" id=""></select></p>
+          </div>
+
+          <div class="container-jogos last">
+            <div class="fileira">
+              <img id="imgFiltro0" src="" alt="">
+              <p id="tituloFiltro0"></p>
+              <p class="preço" id="preço0"></p>
+            </div>
+            <div class="fileira">
+              <img id="imgFiltro1" src="" alt="">
+              <p id="tituloFiltro1"></p>
+              <p class="preço" id="preço1"></p>
+            </div>
+            <div class="fileira">
+              <img id="imgFiltro2" src="" alt="">
+              <p id="tituloFiltro2"></p>
+              <p class="preço" id="preço2"></p>
+            </div>
+            <div class="fileira">
+              <img id="imgFiltro3" src="" alt="">
+              <p id="tituloFiltro3"></p>
+              <p class="preço" id="preço3"></p>
+            </div>
+            <div class="fileira">
+              <img id="imgFiltro4" src="" alt="">
+              <p id="tituloFiltro4"></p>
+              <p class="preço" id="preço4"></p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

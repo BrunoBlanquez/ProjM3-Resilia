@@ -1,0 +1,226 @@
+*{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  html, body{
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    line-height: 18px;
+    background: rgb(27,41,57);
+    background: linear-gradient(90deg, rgba(27,41,57,1) 20%, rgba(30,49,80,1) 50%, rgba(27,40,57,1) 80%);
+  }
+
+  body{
+    background-image: url('https://steamcdn-a.akamaihd.net/steam/apps/10/page_bg_generated_v6b.jpg?t=1528733245');  
+  }
+
+  .navbar .navbar-collapse {
+  text-align: center;
+  }
+  
+  .bg-header {
+    background-color: #171A21;
+  }
+  
+  .menu-itens{
+    color: #b8b6b4 !important;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    height: 85px !important;
+  }
+  
+  .menu-itens:hover {
+    color: #fff !important;
+  }
+  
+  .div-pesquisa {
+    background: rgb(27,41,57);
+    background: linear-gradient(90deg, rgba(27,41,57,1) 20%, rgba(30,49,80,1) 50%, rgba(27,40,57,1) 80%);
+    height: 1500px;
+    width: 100%;
+    display: flex;
+  }
+  
+  .painelBusca{
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  
+  .painelBusca img{
+    height: 20px;
+  }
+  
+  .painelBusca button{
+    width: 30px;
+    height: 25px;
+    padding-top: 3px;
+    background-color: #4e95c4;
+    box-shadow: 0 0 0 0;
+    border: 1px;
+    outline: 0;
+    cursor: pointer;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px ;
+  }
+  
+  .painelBusca button:hover{
+    background-color: #66c0f4 ;
+  }
+  
+  .painelBusca input{
+    height: 25px;
+    width: 220px;
+    padding-left: 5px;
+    background-color: #305d8a;
+    color: #fff;
+    box-shadow: 0 0 0 0;
+    border: 1px;
+    outline: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .painelBusca input::placeholder {
+    color: gray;
+  }
+  
+  .painelBusca input:hover{
+    outline: 1px solid #66c0f4;
+    outline-offset: -1px;
+  }
+  
+  .labelPesquisa {
+    color: #b8b6b4;
+    margin-bottom: 10px;
+    /* margin-top: 250px; */
+  }
+  
+  .inputPesquisa {
+    width: 250px;
+    height: 30px;
+  }
+  
+  .tituloJogo{
+    font-size: 26px;
+    line-height: 32px;
+    text-overflow: ellipsis;
+  }
+  
+  .painelPrincipal{
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 1000px;
+    margin: 0 15% 0 15%;
+    display: flex;
+    justify-content: center;
+}
+  
+.informacoesJogo{
+  width: 100%;
+  height: 430px;
+  display: none;
+  justify-content: space-between;
+  flex-flow: row wrap ;
+  background-color: rgba(0,0,0,0.4);
+  }
+
+.screenshot{
+  width: 690px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+}
+
+.screenshot img {
+  max-width: 580px;
+  height: 100%;
+}
+
+.infoJogo{
+  width: 340px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.descricaoJogo{
+  width: 338px;
+  height: 124px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.infoExtra{
+  margin-top: 0px;
+}
+
+.infoExtra p{
+  font-size: 10px;
+  color: #556772;
+}
+
+.top5{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 160px;
+  margin: 20px 15px;
+}
+
+.tituloJogos{
+  width: 100%;
+  height: 12.5%;
+  margin-bottom: 5px;
+}
+
+.container-jogos{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 83.5%;
+  background-color: #2A475E;
+}
+
+.fileira{
+  width: 19.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all ease 0.2s;
+}
+
+.fileira:hover{
+  background-color: #4e697d;
+  cursor: pointer;
+  width: 20%;
+}
+
+.fileira img{
+  width: 100%;
+}
+
+
+.fileira p{
+  margin-left: 8px;
+}
+
+.last{
+  height: 100%;
+}
+
+.preço{
+  color: greenyellow;
+}
