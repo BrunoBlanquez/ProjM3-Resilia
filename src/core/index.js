@@ -2,7 +2,6 @@ import {buscaTabela,pegaTop5, pegaLancamentos, pegaFiltro, montaSelect} from './
 
 const botao = $('#btn');
 
-
 // BUSCANDO POR NOME
 botao.on('click', function () {
     buscaTabela(); 
