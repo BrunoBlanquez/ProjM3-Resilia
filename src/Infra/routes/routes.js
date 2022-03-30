@@ -4,15 +4,15 @@ const app = express();
 
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('/descricao/:id', (req, res) => {
     // SALVANDO O RETORNO DA QUERY EM UMA VARIAVEL
-    async function testando(){
+    async function pegaDescricao(nome){
         const db = require('../database/db');
-        const listaDeJogos =  await db.selectDescription();
+        const listaDeJogos =  await db.selectDescription(nome);
         return res.json( listaDeJogos );
     
     };
-    testando();
+    pegaDescricao(req.params.id);
 });
 
 app.get('/top5gratis', (req, res) => {

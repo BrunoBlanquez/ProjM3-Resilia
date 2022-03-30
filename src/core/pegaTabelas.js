@@ -15,44 +15,34 @@ const distribuidora = $('#distribuidora');
 
 async function buscaTabela() {
     try {
-            const response = await fetch('http://localhost:3000/'); 
+            const response = await fetch(`http://localhost:3000/descricao/${inputJogo.val()}`); 
             const data = await response.json();
             console.log(data);
-             
-        
-            data.forEach(jogos => {
-                jogos.forEach( jogo =>{
-                    if( jogo.name.toLowerCase() == inputJogo.val().toLowerCase() ){
-                        $('.informacoesJogo').css('display', 'flex')
-                        tituloJogo.html(jogo.name);
-                        headerJogo.attr('src', jogo.header_image);
-                        descricaoJogo.html(jogo.short_description);
 
-                        let screenshotsArray = Array.from(jogo.screenshots); // TRANSFORMA A INFO EM ARRAY
-                        let arrayFiltro = screenshotsArray.filter( letra => letra !== '[' ).filter(letra => letra !== ']');// TIRA STRING QUE SÃO COLCHETES
-                        let objeto = arrayFiltro.join('').split(',')[4]; // PEGA A INFO DA SCREEN QUE TA NA POSIÇÃO 4
-                        let finalRetorno = objeto.replace("'path_thumbnail': ",'').replace("'",''); // TIRA TODOS OS CARACTERES DEIXANDO APENAS O LINK DA SCREENSHOT
+            $('.informacoesJogo').css('display', 'flex')
+            tituloJogo.html(data[0][0].name);
+            headerJogo.attr('src', data[0][0].header_image);
+            descricaoJogo.html(data[0][0].short_description);
+
+            let screenshotsArray = Array.from(data[0][0].screenshots); // TRANSFORMA A INFO EM ARRAY
+            let arrayFiltro = screenshotsArray.filter( letra => letra !== '[' ).filter(letra => letra !== ']');// TIRA STRING QUE SÃO COLCHETES
+            let objeto = arrayFiltro.join('').split(',')[4]; // PEGA A INFO DA SCREEN QUE TA NA POSIÇÃO 4
+            let finalRetorno = objeto.replace("'path_thumbnail': ",'').replace("'",''); // TIRA TODOS OS CARACTERES DEIXANDO APENAS O LINK DA SCREENSHOT
+
             
-                       
-                        imagemScreenshot.attr('src', finalRetorno);
-                        analisesPositivas.html(`POSITIVE RATINGS: ${jogo.positive_ratings}`);
-                        desenvolvedor.html(`DEVELOPER: ${jogo.developer}`);
-                        distribuidora.html(`PLUBISHER: ${jogo.publisher}`);
-                        dataLançamento.html(`DATA LANÇAMENTO: ${jogo.release_date}`)
+            imagemScreenshot.attr('src', finalRetorno);
+            analisesPositivas.html(`POSITIVE RATINGS: ${data[0][0].positive_ratings}`);
+            desenvolvedor.html(`DEVELOPER: ${data[0][0].developer}`);
+            distribuidora.html(`PLUBISHER: ${data[0][0].publisher}`);
+            dataLançamento.html(`DATA LANÇAMENTO: ${data[0][0].release_date}`)
 
-                        inputJogo.val('')
-                    }
-                })     
-            });   
+            inputJogo.val('')
+            
         }
 
     catch (error) {
         console.error('erro : ', error);
     }
-}
-
-function mostraJogo() {
-    console.log('foi')
 }
 
 
@@ -73,8 +63,6 @@ async function pegaTop5(params) {
     catch (error) {
         console.error('erro : ', error);
     }
-
-    console.log('dentro da função')
 }
 
 // BUSCANDO LANÇAMENTOS
@@ -113,7 +101,6 @@ async function pegaFiltro(valor) {
             }
               
         }
-        console.log(data[0][0])
     } catch (error) {
         console.error('erro : ', error);
     }
@@ -135,4 +122,4 @@ async function montaSelect() {
 }
 
 
-export {buscaTabela, pegaTop5, pegaLancamentos, pegaFiltro, montaSelect, mostraJogo};
+export {buscaTabela, pegaTop5, pegaLancamentos, pegaFiltro, montaSelect};
