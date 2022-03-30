@@ -3,7 +3,7 @@ analisesPositivas, dataLançamento,
 desenvolvedor, distribuidora, apiUrl}  from './variaveis.js'; 
 
 
-//TABELA COMPLETA DA STEAM
+//====================================TABELA COMPLETA DA STEAM===============================================
 
 async function buscaTabela() {  
     const data = await consultaApi(`descricao/${inputJogo.val()}`);
@@ -30,8 +30,9 @@ async function buscaTabela() {
     inputJogo.val('')
 
 }
+//---------------------------------------------------------------------------------------------------
 
-// BUSCANDO TOP5
+//===============================BUSCANDO TOP5=======================================================
 async function pegaTop5() {
     const data = await consultaApi('top5gratis');
 
@@ -42,8 +43,9 @@ async function pegaTop5() {
         </div>`)
     }         
 }
+//---------------------------------------------------------------------------------------------------
 
-// BUSCANDO LANÇAMENTOS
+//=================================BUSCANDO LANÇAMENTOS==============================================
 async function pegaLancamentos() {
     const data = await consultaApi('lancamentos');
 
@@ -54,8 +56,9 @@ async function pegaLancamentos() {
         </div>`)
     } 
 }
+//----------------------------------------------------------------------------------------------------
 
-//TABELA FILTRADA
+//====================================TABELA FILTRADA=================================================
 async function pegaFiltro(valor) {
         const data = await consultaApi(`filtrovalor/${valor}`);
 
@@ -72,8 +75,9 @@ async function pegaFiltro(valor) {
               
         }
 }
+//------------------------------------------------------------------------------------------------------
 
-// MONTANDO O SELECT BUSCANDO VALOR DOS PREÇOS NO BANCO
+//=======================MONTANDO O SELECT BUSCANDO VALOR DOS PREÇOS NO BANCO===========================
 async function montaSelect() {
     let data = await consultaApi('precos');
 
@@ -81,8 +85,9 @@ async function montaSelect() {
         $('#valorJogo').append(`<option value='${data[0][i].price}'>${data[0][i].price}</option>`);
     }       
 }
+//------------------------------------------------------------------------------------------------------
 
-// CONSULTA API USANDO APIURL (LOCALHOST:3000) E O CAMINHO DESEJADO
+//=================CONSULTA API USANDO APIURL (LOCALHOST:3000) E O CAMINHO DESEJADO=====================
 async function consultaApi(caminho) {
     try {
         const response = await fetch(apiUrl + caminho);
@@ -93,5 +98,6 @@ async function consultaApi(caminho) {
         console.error('erro', error);
     }
 }
+//------------------------------------------------------------------------------------------------------
 
 export {buscaTabela, pegaTop5, pegaLancamentos, pegaFiltro, montaSelect};

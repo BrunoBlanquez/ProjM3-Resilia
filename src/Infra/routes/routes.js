@@ -56,4 +56,3 @@ app.get('/precos', (req, res) => {
 })
 
 app.listen('3000');
-
