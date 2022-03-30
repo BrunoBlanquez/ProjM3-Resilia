@@ -47,11 +47,11 @@ text-align: center;
 
 .div-pesquisa {
   width: 70%;
-  /* height: 500px; */
   margin: 0 auto 0 auto;
   display: flex;
   margin-top: 125px;
-  
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -129,6 +129,29 @@ text-align: center;
 }
 
 #btn:hover {
+  color: white;
+  background: #799905;
+} 
+
+.opcoesEstat {
+  display: flex;
+}
+
+.btnEstatit {
+  margin: 25px;
+  height: 75px;
+  width: 125px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 15px;
+  background: linear-gradient( to bottom, #799905 5%, #536904 95%);
+  color: #D2E885 !important;
+  border-radius: 5px;
+  border: none;
+}
+
+.btnEstatit:hover {
   color: white;
   background: #799905;
 } 
@@ -250,4 +273,35 @@ text-align: center;
 
 .fileira p{
   margin-left: 8px;
+}
+
+#charModal {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 150px;
+  height: auto;
+  background-color: transparent;
+  border: none;
+}
+
+.containerDescricao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#grafico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imgBG {
+  width: 850px;
+  height: 550px;
 }

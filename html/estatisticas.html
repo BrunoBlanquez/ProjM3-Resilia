@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Estatisticas - Steam</title>
   <link rel="stylesheet" href="../node_modules/jquery/dist/jquery.min.js">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/js/bootstrap.min.js">
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../css/style.css">
-  <script src="./../jquery.js" defer></script>
-  <script src="./../index.js" defer></script>
+  <script src="../src/controllers/graficos.js" defer></script>
 </head>
 
 <body>
@@ -38,11 +37,23 @@
   <main>
     <div>
       <div class="div-pesquisa">
-        <label for="inputPesquisa" class="labelPesquisa">Jogos Confira nossos Jogos</label>
-        <section id="painelDeJogos">
-          <p id="jogos"> nome.jogo </p>
-          <button id="btn">Teste</button>
-        </section>
+        <div class="opcoesEstat">
+          <button class="btnEstatit" onclick="selecionarGrafico('graph1')">Desenv. com menor Ranking</button>
+          <button class="btnEstatit" onclick="selecionarGrafico('graph2')">Lançamentos com ranking positivo</button>
+          <button class="btnEstatit" onclick="selecionarGrafico('graph3')">Lançamento vs tempo de jogo</button>
+          <button class="btnEstatit" onclick="selecionarGrafico('graph4')">Top 15 jogos grátis</button>
+          <button class="btnEstatit" onclick="selecionarGrafico('graph5')">Jogos com preço acima da média</button>
+        </div>
+        <div id="charModal" class="modal">
+          <div class="modal-content">
+            <!-- <span class="close" id="closeModal">&times;</span> -->
+            <div class="containerDescricao">
+              <div id="grafico"></div>
+              <div id="tituloGrafico"></div>
+              <div id="descricaoGrafico"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </main>

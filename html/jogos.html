@@ -20,23 +20,23 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-header ">
     <div class="container header">
       <a class="navbar-brand menu-itens" href="#">
-        <img src="../img/logo_steam.svg" alt="Logo Steam" width="150" height="100">
+        <a href="./../index.html"><img src="../img/logo_steam.svg" alt="Logo Steam" width="150" height="100"></a>
       </a>
-      <!-- <div class="header-menu" id="">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 header-menu">
+       <div class="header-menu" id="">
+     <!--   <ul class="navbar-nav me-auto mb-2 mb-lg-0 header-menu">
           <li class="nav-item">
             <a class="nav-link menu-itens" aria-current="page" href="../index.html">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item">-->
             <a class="nav-link menu-itens" href="estatisticas.html">Estatisticas</a>
-          </li>
+        <!--  </li>
           <li class="nav-item">
             <a class="nav-link menu-itens" href="jogos.html">Jogos</a>
           </li>
           <li class="nav-item dropdown">
           </li>
-        </ul>
-      </div> -->
+        </ul>-->
+      </div> 
     </div>
   </nav>
 
@@ -54,7 +54,6 @@
         <!-- INFORMAÇÕES DO JOGO  -->
         <section id="informacoesJogo" class="informacoesJogo">
           <figure class="screenshot">
-
             <img id="imagemScreenshot" src="" alt="">
           </figure>
 
@@ -73,12 +72,14 @@
         <!-- DIV FILEIRA COM TOP 5 JOGOS GRATIS -->
         <section class="top5 gratis" >
           <div class="tituloJogos" >
-            <p>Melhores Jogos Grátis</p><br>
+            <p > Melhores Jogos Grátis</p><br>
           </div>
-          <div id="divTop5" value="teste" class="container-jogos">
+          <div id="divTop5" class="container-jogos">
             <!-- FILEIRA VEM AQUI -->
           </div>  
         </section>
+
+        
 
         <!-- DIV FILEIRA COM TOP 5 LANÇAMENTOS  -->
         <section class="top5 lançamentos">
@@ -93,13 +94,14 @@
         <!-- DIV FILEIRA COM FILTRO -->
         <section id="divFiltro"  class="top5 menorPreço">
           <div class="tituloJogos">
-            <p onclick="mostraJogo();">Filtre jogos pelo preço: <select id="valorJogo" name="select" id=""></select></p>
+            <p>Filtre jogos pelo preço: <select id="valorJogo" name="select" id=""></select></p>
           </div>
 
+          
           <div class="container-jogos last">
-            <div class="fileira">
+            <div  class="fileira">
               <img id="imgFiltro0" src="" alt="">
-              <p id="tituloFiltro0"></p>
+              <p  id="tituloFiltro0"></p>
               <p class="preço" id="preço0"></p>
             </div>
             <div class="fileira">
@@ -124,6 +126,9 @@
             </div>
           </div>
         </section>
+
+
+        
 
       </div>
     </div>
