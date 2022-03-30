@@ -228,3 +228,25 @@
 .preço{
   color: greenyellow;
 }
+
+@media(max-width: 1491px) {
+  .informacoesJogo{
+    height: 700px;
+    flex-wrap: row wrap;
+    justify-content: center;
+  }
+
+  .tituloJogo{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .infoJogo{
+    margin-top: 20px;
+  }
+
+  .infoExtra{
+    display: none;
+  }
+}
