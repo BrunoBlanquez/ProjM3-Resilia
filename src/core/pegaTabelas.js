@@ -1,14 +1,6 @@
-const painelDeJogos = $('#painelDeJogos');
-const inputJogo = $('#nomeJogo');
-const headerJogo = $('#headerJogo');
-const tituloJogo = $('#tituloJogo');
-const descricaoJogo = $('#descricaoJogo');
-const imagemScreenshot = $('#imagemScreenshot');
-const analisesPositivas = $('#analisesPositivas');
-const dataLançamento = $('#dataLançamento');
-const desenvolvedor = $('#desenvolvedor');
-const distribuidora = $('#distribuidora');
-const apiUrl = 'http://localhost:3000/';
+import {inputJogo, headerJogo, tituloJogo, descricaoJogo, imagemScreenshot, 
+analisesPositivas, dataLançamento, 
+desenvolvedor, distribuidora, apiUrl}  from './variaveis.js'; 
 
 
 //TABELA COMPLETA DA STEAM
@@ -90,7 +82,7 @@ async function montaSelect() {
     }       
 }
 
-// CONSULTA A API JUNTAO A URL (LOCALHOST:3000) COM O CAMINHO DESEJADO
+// CONSULTA API USANDO APIURL (LOCALHOST:3000) E O CAMINHO DESEJADO
 async function consultaApi(caminho) {
     try {
         const response = await fetch(apiUrl + caminho);
