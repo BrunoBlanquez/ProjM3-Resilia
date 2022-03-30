@@ -40,6 +40,10 @@
     color: #fff !important;
   }
   
+  a{
+    text-decoration: none;
+  }
+
   .div-pesquisa {
     background: rgb(27,41,57);
     background: linear-gradient(90deg, rgba(27,41,57,1) 20%, rgba(30,49,80,1) 50%, rgba(27,40,57,1) 80%);
