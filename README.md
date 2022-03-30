@@ -5,7 +5,7 @@
  <a href="#Tecnologias">Tecnologias</a> • 
  <a href="#Pré-requisitos e como rodar a aplicação">Pré-requisitos e como rodar a aplicação</a> • 
  <a href="#Perguntas">Perguntas</a> •
- <a href="#Gráficos">Perguntas</a> • 
+ <a href="#Gráficos">Gráficos</a> • 
  <a href="#autores">Autores</a>
 </p>
 
